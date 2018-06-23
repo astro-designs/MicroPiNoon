@@ -18,4 +18,16 @@ then
     sudo cp /boot/autorun.sh /boot/autorun.old -f
     sudo cp ./autorun.sh /boot
 fi
-    
+
+if [ -f /home/pi/piz-moto/examples/ps3bot.py ]
+then
+    echo Updating ps3bot.py
+    rm /home/pi/piz-moto/examples/ps3bot.py
+    cd /home/pi/piz-moto
+    git pull 
+fi
+
+if [ ! -f /home/pi/piz-moto/examples/ps3bot.py ]
+then
+    echo ps3bot.py not found
+fi
